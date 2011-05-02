@@ -1,4 +1,6 @@
 App1::Application.routes.draw do
+  get "connect/sms"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
