@@ -1,5 +1,12 @@
 App1::Application.routes.draw do
-  get "connect/sms"
+  devise_for :users
+
+  resources :sms
+
+  get "connect/sms_send"
+
+  get "connect/sms_recieve"
+  get "connect/test"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -50,7 +57,7 @@ App1::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  root :to => "connect#test"
 
   # See how all your routes lay out with "rake routes"
 

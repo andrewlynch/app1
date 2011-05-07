@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class ConnectControllerTest < ActionController::TestCase
-  test "should get sms" do
-    get :sms
+  test "should get clickatell" do
+    get :clickatell
     assert_response :success
   end
 
