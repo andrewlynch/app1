@@ -3,8 +3,7 @@ App1::Application.routes.draw do
 
   resources :sms
 
-  get "connect/sms_send"
-
+  get "connect/index"
   get "connect/sms_recieve"
   get "connect/test"
 
