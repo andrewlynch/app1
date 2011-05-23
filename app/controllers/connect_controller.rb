@@ -1,5 +1,5 @@
 class ConnectController < ApplicationController
-   before_filter :authenticate_user!
+   #before_filter :authenticate_user!
 
    def index
      #http://www.napt.mobi/connect/sms?api_id=12345&apiMsgId=996f364775e24b8432f45d77da8eca47&cliMsgId=abc123
@@ -8,6 +8,7 @@ class ConnectController < ApplicationController
      @msgid = params[:msgid]  
      @from = params[:from]
      @msg = params[:msg]    
+      @email = params[:email]
     check_user()
     end
   
@@ -31,7 +32,7 @@ class ConnectController < ApplicationController
     @note = "We are adding the user to the database"
     #:email => "fdhgfhsfa@google.com",
     @random = rand(100000)
-    @user = User.new( :password => @random, :password_confirmation => 'password', :mobile => @from)
+    @user = User.new(:email => @email, :password => @random, :password_confirmation => @random, :mobile => @from)
     @user.save
     
    
