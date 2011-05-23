@@ -6,6 +6,7 @@ App1::Application.routes.draw do
   get "connect/index"
   get "connect/sms_recieve"
   get "connect/test"
+  get "admin/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
