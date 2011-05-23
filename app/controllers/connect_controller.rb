@@ -14,16 +14,28 @@ class ConnectController < ApplicationController
   def check_user()
   
     #check if user's mobile number is already in the users database
-    if @from == "0828869024"
-      @note = 'The user ', @from,' is registered '  
-    else   
+     @new3 = User.find_by_mobile(@from)
+    
+     if @new3 != nil
+       @note = @from, " is in the database."
+     # @new3.mobile = "082"
+     # @new3.save
+     else   
       reg_user()
     end
   
   end
  
   def reg_user()
+   #reg a new user
     @note = "We are adding the user to the database"
+    #:email => "fdhgfhsfa@google.com",
+    @random = rand(100000)
+    @user = User.new( :password => @random, :password_confirmation => 'password', :mobile => @from)
+    @user.save
+    
+   
+  
   end
 
 end

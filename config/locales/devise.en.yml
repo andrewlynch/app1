@@ -48,3 +48,5 @@ en:
         subject: 'Reset password instructions'
       unlock_instructions:
         subject: 'Unlock Instructions'
+    user:
+        login: "email or mobile"
